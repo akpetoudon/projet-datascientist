@@ -1,0 +1,47 @@
+
+R version 4.2.1 (2022-06-23 ucrt) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R est un logiciel libre livré sans AUCUNE GARANTIE.
+Vous pouvez le redistribuer sous certaines conditions.
+Tapez 'license()' ou 'licence()' pour plus de détails.
+
+R est un projet collaboratif avec de nombreux contributeurs.
+Tapez 'contributors()' pour plus d'information et
+'citation()' pour la façon de le citer dans les publications.
+
+Tapez 'demo()' pour des démonstrations, 'help()' pour l'aide
+en ligne ou 'help.start()' pour obtenir l'aide au format HTML.
+Tapez 'q()' pour quitter R.
+
+> df<- read.csv('HR_comma_sep.csv')
+> df2<- df
+> summary(df2) 
+ satisfaction_level last_evaluation  number_project  average_montly_hours
+ Min.   :0.0900     Min.   :0.3600   Min.   :2.000   Min.   : 96.0       
+ 1st Qu.:0.4400     1st Qu.:0.5600   1st Qu.:3.000   1st Qu.:156.0       
+ Median :0.6400     Median :0.7200   Median :4.000   Median :200.0       
+ Mean   :0.6128     Mean   :0.7161   Mean   :3.803   Mean   :201.1       
+ 3rd Qu.:0.8200     3rd Qu.:0.8700   3rd Qu.:5.000   3rd Qu.:245.0       
+ Max.   :1.0000     Max.   :1.0000   Max.   :7.000   Max.   :310.0       
+ time_spend_company Work_accident         left        promotion_last_5years
+ Min.   : 2.000     Min.   :0.0000   Min.   :0.0000   Min.   :0.00000      
+ 1st Qu.: 3.000     1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.00000      
+ Median : 3.000     Median :0.0000   Median :0.0000   Median :0.00000      
+ Mean   : 3.498     Mean   :0.1446   Mean   :0.2381   Mean   :0.02127      
+ 3rd Qu.: 4.000     3rd Qu.:0.0000   3rd Qu.:0.0000   3rd Qu.:0.00000      
+ Max.   :10.000     Max.   :1.0000   Max.   :1.0000   Max.   :1.00000      
+    sales              salary         
+ Length:14999       Length:14999      
+ Class :character   Class :character  
+ Mode  :character   Mode  :character  
+                                      
+                                      
+                                      
+> cor(df2$average_montly_hours,df2$number_project)
+[1] 0.4172106
+> x <- df2$number_project
+> y <- df2$average_montly_hours
+> plot(x, y, main = "average_montly_hours vs number_project", xlab= "number_project",ylab="average_montly_hours",pch = 19,frame = FALSE)
+> 
