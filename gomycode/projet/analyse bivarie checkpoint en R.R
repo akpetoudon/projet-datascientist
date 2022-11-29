@@ -1,0 +1,7 @@
+data<- read.csv('HR_comma_sep.csv')
+dim(data)
+summary(data)
+colSums(is.na(data))
+cor(data$number_project, data$average_montly_hours)
+linearMod <- lm(average_montly_hours ~ number_project , data=data) 
+print(linearMod)
